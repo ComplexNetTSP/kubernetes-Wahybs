@@ -5,10 +5,10 @@ FROM python:latest
 WORKDIR /app
 
 # Copier le fichier app.py dans le repertoire 
-COPY app.py /app
+COPY  app_no_db.py  /app/app.py
 
 # Installer Flask
-RUN pip install flask pymongo
+RUN pip install flask
 
 # Expose the port the app runs on
 EXPOSE 5000
