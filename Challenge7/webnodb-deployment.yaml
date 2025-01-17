@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webnodb
+  namespace: azribi
+  labels:
+    app: webnodb
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: webnodb
+  template:
+    metadata:
+      labels:
+        app: webnodb
+    spec:
+      containers:
+      - name: webnodb
+        image: wahybs/my-flask-app-ch1:v1  
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            cpu: "100m"    # 1/10th of a CPU
+            memory: "100Mi" # 100 MiB of memory
+          limits:
+            cpu: "200m"    # 1/5th of a CPU
+            memory: "200Mi" # 200 MiB of memory
