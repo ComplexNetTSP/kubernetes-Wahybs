@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webdb
+  namespace: azribi
+  labels:
+    app: webdb
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: webdb
+  template:
+    metadata:
+      labels:
+        app: webdb
+    spec:
+      containers:
+      - name: webdb-container
+        image: wahybs/flask-server-app-ch3:v2
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            cpu: "100m"       # 1/10 CPU
+            memory: "100Mi"   # 100 MB
+          limits:
+            cpu: "200m"       # 1/5 CPU
+            memory: "200Mi"   # 200 MB
+        livenessProbe:         
+          httpGet:
+            path: /healthz     
+            port: 5000         
+          initialDelaySeconds: 5   # Délai avant le premier check
+          periodSeconds: 10        
+          timeoutSeconds: 2        # Délai d'attente pour chaque réponse
+          failureThreshold: 3      

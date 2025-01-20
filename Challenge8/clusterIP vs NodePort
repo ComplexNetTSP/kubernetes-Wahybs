@@ -1,0 +1,5 @@
+Un service ClusterIP est le type de service par défaut dans Kubernetes. 
+Il fournit une adresse IP virtuelle interne (appelée ClusterIP) qui permet aux Pods de communiquer entre eux à l'intérieur du cluster.
+
+Un service NodePort expose un service Kubernetes à l'extérieur du cluster. Il assigne un port spécifique sur tous les nœuds du cluster, 
+permettant aux clients externes d'accéder aux services internes.

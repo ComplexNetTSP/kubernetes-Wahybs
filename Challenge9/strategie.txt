@@ -1,0 +1,7 @@
+Pour webdb :  Probe HTTP
+- Les serveurs web comme Flask exposent  un endpoint HTTP.
+- Une probe HTTP permet de vérifier l’état de santé de l’application en interrogeant un chemin /healthz
+
+Pour mongodb : Probe TCP Socket
+- MongoDB écoute sur un port spécifique 
+- Une probe TCP permet de s’assurer que MongoDB est accessible et répond sur ce port.
