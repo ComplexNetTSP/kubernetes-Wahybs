@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-config
+  namespace: azribi
+data:
+  DB_HOST: mongodb-service.azribi.svc.cluster.local
+  DB_PORT: "27017"
+  DB_USER: admin
+  DB_PASSWORD: admin
