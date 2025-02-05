@@ -1,0 +1,17 @@
+helm create challenge12
+rm -rf challenge12/templates/*
+helm install challenge12 ./challenge12 -n azribi
+helm list -n azribi
+
+kubectl get statefulsets -n azribi
+kubectl get pods -n azribi
+kubectl get pvc -n azribi
+kubectl get svc -n azribi
+
+
+#############################################""
+Pourquoi utiliser un StatefulSet ?
+Fournit une identité stable aux Pods et prend en charge les volumes persistants associés à chaque Pod.
+######################################################
+Qu'est-ce qu'un Headless Service ?
+Un Service sans ClusterIP qui permet d'accéder directement aux Pods via des noms DNS.

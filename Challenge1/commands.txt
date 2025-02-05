@@ -1,0 +1,6 @@
+docker build -t wahybs/my-flask-app-ch1:v1 .
+docker run -d -p 5000:5000 --name my-flask-app wahybs/my-flask-app-ch1:v1
+curl http://localhost:5000
+docker login
+docker push wahybs/my-flask-app-ch1:v1
+ 

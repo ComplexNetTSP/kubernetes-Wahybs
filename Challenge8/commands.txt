@@ -1,0 +1,17 @@
+kubectl apply -f webdb-deployment.yaml
+kubectl apply -f webdb-service.yaml
+kubectl apply -f mongodb-deployment.yaml
+kubectl apply -f mongodb-service.yaml
+kubectl get pods -n azribi
+kubectl get services -n azribi
+
+# test with port forwarding 
+kubectl port-forward svc/webdb-service 8080:80 -n azribi
+curl http://127.0.0.1:8080
+
+# test with KubeProxy
+kubectl proxy
+http://127.0.0.1:8001/api/v1/namespaces/azribi/services/webdb-service/proxy/
+
+
+

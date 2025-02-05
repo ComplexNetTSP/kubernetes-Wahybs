@@ -1,0 +1,12 @@
+######## ajouter /healthz + creation d'une nouvelle image 
+docker-compose up --build -d
+docker tag flask-server-app wahybs/flask-server-app-ch3:v2
+docker login
+docker push wahybs/flask-server-app-ch3:v2
+
+kubectl apply -f webdb-deployment.yaml
+kubectl apply -f webdb-service.yaml
+kubectl apply -f mongodb-deployment.yaml
+kubectl apply -f mongodb-service.yaml
+kubectl get pods -n azribi
+kubectl get services -n azribi

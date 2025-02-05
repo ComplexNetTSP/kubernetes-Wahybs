@@ -1,0 +1,8 @@
+kubectl apply -f webnodb-deployment.yaml
+kubectl apply -f webnodb-service.yaml
+kubectl get deployments -n azribi
+kubectl get services -n azribi
+kubectl get pods -o wide -n azribi
+kubectl proxy
+curl http://127.0.0.1:8001/api/v1/namespaces/azribi/services/webnodb-service/proxy/
+

@@ -1,0 +1,4 @@
+helm create challenge14
+rm -rf challenge14/templates/*
+helm install challenge14 ./challenge14 -n azribi
+helm list -n azribi

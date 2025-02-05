@@ -1,0 +1,12 @@
+docker compose up -d
+docker ps
+docker exec -it mongodb-server mongosh
+# Dans mongosh
+use admin
+db.auth("admin", "password")
+use mydatabase
+db.mycollection.insertOne({ name: "Aziz Zribi", age: 30, city: "Paris" })
+db.mycollection.find()
+exit
+# Sortie du conteneur
+docker compose down

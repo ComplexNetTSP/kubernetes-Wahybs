@@ -1,0 +1,4 @@
+kubectl apply -f ingress.yaml
+kubectl get ingress -n azribi
+curl http://webnodb.azribi.net4255.luxbulb.org
+curl http://webdb.azribi.net4255.luxbulb.org

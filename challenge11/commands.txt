@@ -1,0 +1,7 @@
+helm create challenge11
+rm -rf challenge11/templates/*
+helm install challenge11 ./challenge11 -n azribi
+helm list -n azribi
+helm uninstall challenge11 -n azribi
+
+

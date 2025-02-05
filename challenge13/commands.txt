@@ -1,0 +1,9 @@
+docker build -t wahybs/flask-server-app-ch3:v3 ./webdb
+docker build -t wahybs/my-flask-app-ch1:v2 ./Webnodb
+docker login
+docker push wahybs/flask-server-app-ch3:v3
+docker push wahybs/my-flask-app-ch1:v2
+helm upgrade challenge12 ./challenge13 -n azribi
+kubectl rollout status deployment/challenge13-webdb -n azribi
+kubectl rollout status deployment/challenge13-webnodb -n azribi
+

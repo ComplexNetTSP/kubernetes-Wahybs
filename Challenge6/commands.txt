@@ -1,0 +1,8 @@
+kubectl create deployment webnodb --image=wahybs/my-flask-app-ch1:v1 --namespace=azribi
+kubectl get deployments -o wide --namespace=azribi
+kubectl get pods -o wide --namespace=azribi
+kubectl port-forward pod/webnodb2345 54127:5000 --namespace=azribi
+curl http://127.0.0.1:54127
+
+
+
